@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./assets/favicon.ico"
+      type="image/x-icon"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="./product_detail2.css" />
+    <script
+      src="https://kit.fontawesome.com/20635ad1aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>L♥VE B♡MB</title>
+  </head>
+
+  <body>
+    <header>
+      <img class="logo" src="./assets/images/logo.png" alt="logo" />
+      <div class="nav_menu">
+        <p onclick="location.href='./product.html';">BATH BOMB</p>
+        <p>SIGN UP/LOGIN</p>
+        <button class="nav_cart">
+          <img class="cart" src="./assets/images/nav_cart.png" alt="cart" />
+        </button>
+      </div>
+    </header>
+
+    <section class="item_details">
+      <div class="details">
+        <div class="item_img_options">
+          <button
+            id="img_option_btn1"
+            class="img_option"
+            onclick="toggleImg4()"
+          >
+            <img
+              id="img_option1"
+              src="./assets/images/intergalactic.png"
+              alt="option1"
+            />
+          </button>
+          <button
+            id="img_option_btn2"
+            class="img_option"
+            onclick="toggleImg5()"
+          >
+            <img
+              id="img_option2"
+              src="./assets/images/intergalactic1.jpg"
+              alt="option2"
+            />
+          </button>
+          <button
+            id="img_option_btn3"
+            class="img_option"
+            onclick="toggleImg6()"
+          >
+            <img
+              id="img_option3"
+              src="./assets/images/intergalactic2.jpg"
+              alt="option3"
+            />
+          </button>
+        </div>
+        <div class="detail_images">
+          <img
+            id="detail_img"
+            src="./assets/images/intergalactic.png"
+            alt="intergalactic"
+          />
+        </div>
+        <div class="detail_descriptions">
+          <p class="detail_title">인터갈락틱</p>
+          <p class="detail_subtitle">Intergalactic</p>
+          <p class="detail_desc">싱그러운 페퍼민트와 자몽이 입욕에 상쾌함을!</p>
+          <p>
+            빛나는 별, 환상적인 우주 폭발, 빛의 소용돌이 속에서 안락함을
+            느껴보세요. <br />산뜻한 기분을 선사하는 페퍼민트와 샌달우드는
+            환상적인 입욕 시간을 선물해줍니다. <br /><br />Tip. 이 배쓰 밤은
+            '우주 입욕제' 라는 별명을 갖고 있답니다!
+          </p>
+          <p class="datail_ingredient">
+            제품 성분 | 베티버 뿌리, 자몽, 페퍼민트
+          </p>
+          <div class="detail_add">
+            <p class="detail_price">₩ 17,000</p>
+            <button id="decrease_amount" onclick='count("minus")'>
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <div id="result">1</div>
+            <button id="increase_amount" onclick='count("plus")'>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <button id="btn_modal" class="detail_cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="modal" class="modal_overlay">
+        <div class="modal_window">
+          <div class="modal_content">
+            <p>상품이 장바구니에 담겼습니다!</p>
+          </div>
+          <div class="close_area">
+            <button class="close_btn">확인</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="item_comment">
+      <div class="comment">
+        <p class="comment_star">★★★★★</p>
+        <p class="comment_title">제가 가장 사랑하는 배쓰 밤이랍니다.</p>
+        <div class="comment_description">
+          <p>밤하늘의 별처럼 반짝이는 욕조 안을 바라보고 있으면</p>
+          <p>마치 우주에 떠 있는 것 같아요!</p>
+          <p>상쾌하고 싱그러운 향기는 누구나 좋아할 거예요.</p>
+        </div>
+
+        <p>by. 존</p>
+      </div>
+    </section>
+
+    <section class="other_items">
+      <p class="others_title">OTHERS</p>
+      <div id="slideShow">
+        <ul class="slides">
+          <li>
+            <div class="item" onclick="location.href='./product_detail1.html';">
+              <img
+                class="item_img"
+                src="./assets/images/sexbomb.png"
+                alt="sexbomb"
+              />
+              <div class="item_label">VEGAN</div>
+              <div class="item_description">
+                <p>섹스 밤</p>
+                <p>사랑스러운 비밀</p>
+                <p>₩ 14,000</p>
+                <div>
+                  <button class="heart_btn">
+                    <img
+                      class="heart"
+                      src="./assets/images/heart.png"
+                      alt="heart"
+                    />
+                  </button>
+                  <button class="cart_btn">
+                    <img
+                      class="cart"
+                      src="./assets/images/cart.png"
+                      alt="cart"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item" onclick="location.href='./product_detail3.html';">
+              <img
+                class="item_img"
+                src="./assets/images/goddess.png"
+                alt="sexbomb"
+              />
+              <div class="item_label">VEGAN</div>
+              <div class="item_description">
+                <p>가디스</p>
+                <p>신비로운 보랏빛 행성</p>
+                <p>₩ 20,000</p>
+                <div>
+                  <button class="heart_btn">
+                    <img
+                      class="heart"
+                      src="./assets/images/heart.png"
+                      alt="heart"
+                    />
+                  </button>
+                  <button class="cart_btn">
+                    <img
+                      class="cart"
+                      src="./assets/images/cart.png"
+                      alt="cart"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <img
+                class="item_img"
+                src="./assets/images/sakura.png"
+                alt="sexbomb"
+              />
+              <div class="item_label">VEGAN</div>
+              <div class="item_description">
+                <p>사쿠라</p>
+                <p>설렘 가득한 축제</p>
+                <p>₩ 13,000</p>
+                <div>
+                  <button class="heart_btn">
+                    <img
+                      class="heart"
+                      src="./assets/images/heart.png"
+                      alt="heart"
+                    />
+                  </button>
+                  <button class="cart_btn">
+                    <img
+                      class="cart"
+                      src="./assets/images/cart.png"
+                      alt="cart"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <img
+                class="item_img"
+                src="./assets/images/twilight.png"
+                alt="sexbomb"
+              />
+              <div class="item_description">
+                <p>트와일라잇</p>
+                <p>꿈결 같은 라벤더</p>
+                <p>₩ 14,000</p>
+                <div>
+                  <button class="heart_btn">
+                    <img
+                      class="heart"
+                      src="./assets/images/heart.png"
+                      alt="heart"
+                    />
+                  </button>
+                  <button class="cart_btn">
+                    <img
+                      class="cart"
+                      src="./assets/images/cart.png"
+                      alt="cart"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <img
+                class="item_img"
+                src="./assets/images/groovykindoflove.png"
+                alt="sexbomb"
+              />
+              <div class="item_label">VEGAN</div>
+              <div class="item_description">
+                <p>그루비 카인드 오브 러브</p>
+                <p>자유로운 히피</p>
+                <p>₩ 18,000</p>
+                <div>
+                  <button class="heart_btn">
+                    <img
+                      class="heart"
+                      src="./assets/images/heart.png"
+                      alt="heart"
+                    />
+                  </button>
+                  <button class="cart_btn">
+                    <img
+                      class="cart"
+                      src="./assets/images/cart.png"
+                      alt="cart"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item">
+              <img
+                class="item_img"
+                src="./assets/images/bigblue.png"
+                alt="sexbomb"
+              />
+              <div class="item_label">VEGAN</div>
+              <div class="item_description">
+                <p>빅 블루</p>
+                <p>푸른빛 바다의 여유로움</p>
+                <p>₩ 14,000</p>
+                <div>
+                  <button class="heart_btn">
+                    <img
+                      class="heart"
+                      src="./assets/images/heart.png"
+                      alt="heart"
+                    />
+                  </button>
+                  <button class="cart_btn">
+                    <img
+                      class="cart"
+                      src="./assets/images/cart.png"
+                      alt="cart"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="controller">
+          <span class="prev">&lang;</span>
+          <span class="next">&rang;</span>
+        </p>
+      </div>
+    </section>
+
+    <script src="./product_detail.js"></script>
+  </body>
+</html>

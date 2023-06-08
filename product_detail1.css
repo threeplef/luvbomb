@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  background: linear-gradient(#ffcce5, 50%, #d9c9ff);
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+/* -----------------헤더----------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav_menu {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav_menu p:nth-child(1) {
+  margin-right: 30px;
+}
+
+.nav_menu p:hover {
+  color: #004996;
+  transition: ease-in 0.3s;
+}
+
+.nav_menu button:hover {
+  background: #bbeaff;
+  transition: ease-in 0.5s;
+}
+
+.nav_cart {
+  padding: 12px 15px;
+  border: 1.5px solid #004996;
+  border-radius: 50%;
+  background: #f2faff;
+  cursor: pointer;
+}
+
+.cart {
+  width: 20px;
+}
+
+/* -----------------상세 정보----------------- */
+.item_details {
+  margin: 7% 0 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.item_img_options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img_option {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.img_option img {
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+}
+
+.detail_images {
+  margin-left: 10%;
+  transition: ease 0.5s;
+}
+
+#detail_img {
+  margin-top: 5%;
+  width: 300px;
+  height: 65%;
+  border-radius: 10px;
+}
+
+@keyframes openImg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.detail_descriptions {
+  height: 500px;
+  margin-left: 13%;
+}
+
+.detail_title {
+  margin-bottom: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.detail_subtitle {
+  margin: 5px 0 36px 0;
+}
+
+.detail_desc {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.datail_ingredient {
+  font-size: 15px;
+  line-height: 60px;
+}
+
+.detail_add {
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.detail_price {
+  margin-right: 20%;
+  font-size: 20px;
+}
+
+#decrease_amount,
+#increase_amount {
+  margin: 0 10px;
+  padding: 10px 13px;
+  border: none;
+  border-radius: 30px;
+  background: transparent;
+  color: #fd4c8f;
+  font-size: 20px;
+  transition: ease 0.5s;
+  cursor: pointer;
+}
+
+#decrease_amount:disabled {
+  background: transparent;
+  color: #7e7e7e;
+}
+
+#decrease_amount:hover,
+#increase_amount:hover {
+  background: #fb98be;
+}
+
+#result {
+  font-size: 17px;
+}
+
+.detail_cart {
+  margin-left: 5%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #fb98be;
+  font-size: 15px;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+
+.detail_cart:hover {
+  background: #fc76aa;
+}
+
+/* -----------------모달----------------- */
+.modal_overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: openModal 0.5s ease;
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal_window {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 400px;
+  height: 200px;
+  position: relative;
+  top: 2%;
+  padding: 10px;
+}
+
+.close_area {
+  text-align: center;
+}
+
+.close_btn {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #fb98be;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+
+.close_btn:hover {
+  background: #fc76aa;
+}
+
+.modal_content {
+  margin: 14% 0 10% 0;
+  padding: 0px 10px;
+  text-align: center;
+  font-family: "Gowun Dodum", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* -----------------평가----------------- */
+.item_comment {
+  margin-bottom: 15%;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment_star {
+  line-height: 50px;
+}
+
+.comment_title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.comment_description {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.comment_description p {
+  line-height: 25px;
+}
+
+/* -----------------상품 슬라이드----------------- */
+.others_title {
+  margin: 10% 0 5% 0;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* 보여줄 구간의 높이와 넓이 설정 */
+#slideShow {
+  width: 1010px;
+  height: 550px;
+  position: relative;
+  margin: 50px auto;
+  overflow: hidden;
+  /*리스트 형식으로 이미지를 일렬로 
+  정렬할 것이기 때문에, 500px 밖으로 튀어 나간 이미지들은
+  hidden으로 숨겨줘야됨*/
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left 0.5s ease-out;
+}
+
+.slides li:first-child {
+  margin-left: 30px;
+}
+
+.slides li:not(:last-child) {
+  float: left;
+  margin-right: 30px;
+}
+
+.slides li {
+  float: left;
+}
+
+.controller span {
+  position: absolute;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 50%;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.prev:hover {
+  transform: translateX(-10px);
+  transition: ease 0.3s;
+}
+
+.next {
+  right: 10px;
+}
+
+.next:hover {
+  transform: translateX(10px);
+  transition: ease 0.3s;
+}
+
+/* -----------------상품 슬라이드 아이템----------------- */
+.item {
+  position: relative;
+  width: 300px;
+  height: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1.5px solid #c7bbff; */
+  border-radius: 20px;
+  background: #c9c9ff;
+}
+
+.item:hover {
+  background: #d5dafa;
+  transition: ease-in 0.3s;
+  cursor: pointer;
+}
+
+.item_img {
+  margin: 30px 0;
+  width: 70%;
+}
+
+.item_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item_label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 25px 10px;
+  background: #bbeaff;
+  border-radius: 100px;
+  color: #004996;
+  font-weight: 600;
+}
+
+.item_label_new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 25px 18px;
+  background: #c7bbff;
+  border-radius: 100px;
+  color: #004996;
+  font-weight: 600;
+}
+
+.item_description p {
+  margin: 3px 0;
+}
+
+.item_description p:nth-child(1) {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.item_description p:nth-child(2) {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.item_description p:nth-child(3) {
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.heart_btn {
+  padding: 14px 15px;
+  border: none;
+  border-radius: 50%;
+  background: #ffbbc6;
+  cursor: pointer;
+}
+
+.cart_btn {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 50%;
+  background: #004996;
+  cursor: pointer;
+}
+
+.heart {
+  width: 20px;
+}
+
+.cart {
+  width: 20px;
+}

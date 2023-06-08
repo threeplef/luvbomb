@@ -1,26 +1,24 @@
-const slideList = document.querySelector(".slide_list"); // Slide parent dom
-const slideContents = document.querySelectorAll(".slide_content"); // each slide dom
-const slideBtnNext = document.querySelector(".slide_btn_next"); // next button
-const slideBtnPrev = document.querySelector(".slide_btn_prev"); // prev button
+/* -----------------슬라이드 배너----------------- */
+const slideList = document.querySelector(".slide_list");
+const slideContents = document.querySelectorAll(".slide_content");
+const slideBtnNext = document.querySelector(".slide_btn_next");
+const slideBtnPrev = document.querySelector(".slide_btn_prev");
 const pagination = document.querySelector(".slide_pagination");
-const slideLen = slideContents.length; // slide length
-const slideWidth = 1690; // slide width
-const slideSpeed = 300; // slide speed
-const startNum = 0; // initial slide index (0 ~ 4)
+const slideLen = slideContents.length;
+const slideWidth = 1690;
+const slideSpeed = 300;
+const startNum = 0;
 
 slideList.style.width = slideWidth * (slideLen + 2) + "px";
 
-// Copy first and last slide
+/* 첫번째, 마지막 슬라이드 복제 */
 let firstChild = slideList.firstElementChild;
 let lastChild = slideList.lastElementChild;
 let clonedFirst = firstChild.cloneNode(true);
 let clonedLast = lastChild.cloneNode(true);
-
-// Add copied Slides
 slideList.appendChild(clonedFirst);
 slideList.insertBefore(clonedLast, slideList.firstElementChild);
 
-// Add pagination dynamically
 let pageChild = "";
 for (var i = 0; i < slideLen; i++) {
   pageChild += '<li class="dot';
@@ -37,7 +35,7 @@ let curIndex = startNum; // current slide index (except copied slide)
 let curSlide = slideContents[curIndex]; // current slide dom
 curSlide.classList.add("slide_active");
 
-/** Next Button Event */
+/* 다음 버튼 */
 slideBtnNext.addEventListener("click", function () {
   if (curIndex <= slideLen - 1) {
     slideList.style.transition = slideSpeed + "ms";
@@ -61,7 +59,7 @@ slideBtnNext.addEventListener("click", function () {
   pageDots[curIndex].classList.add("dot_active");
 });
 
-/** Prev Button Event */
+/* 이전 버튼 */
 slideBtnPrev.addEventListener("click", function () {
   if (curIndex >= 0) {
     slideList.style.transition = slideSpeed + "ms";
@@ -83,7 +81,7 @@ slideBtnPrev.addEventListener("click", function () {
   pageDots[curIndex].classList.add("dot_active");
 });
 
-/** Pagination Button Event */
+/* 페이지네이션 */
 let curDot;
 Array.prototype.forEach.call(pageDots, function (dot, i) {
   dot.addEventListener("click", function (e) {
